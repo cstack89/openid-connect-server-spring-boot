@@ -17,24 +17,24 @@
 					<li data-th-if="${pageName == 'Home'}" class="active"><a data-th-text="#{topbar.home}"  href="" data-toggle="collapse" data-target=".nav-collapse">Home</a></li>
 					<li data-th-unless="${pageName == 'Home'}"><a data-th-text="#{topbar.home}" href="" data-toggle="collapse" data-target=".nav-collapse">Home</a></li>
 					<li data-th-if="${pageName == 'About'}" class="active" data-toggle="collapse" data-target=".nav-collapse"><a data-th-text="#{topbar.about}" href="">About</a></li>
-					<li data-th-unless="${pageName == 'About'}"><a data-th-text="#{topbar.about}"  href="about" data-toggle="collapse" data-target=".nav-collapse">About</a></li>
+					<li data-th-unless="${pageName == 'About'}"><a data-th-text="#{topbar.about}"  href="/auth/about" data-toggle="collapse" data-target=".nav-collapse">About</a></li>
 					<li data-th-if="${pageName == 'Statistics'}" class="active" data-toggle="collapse" data-target=".nav-collapse"><a data-th-text="#{topbar.statistics}" href="">Statistics</a></li>
-					<li data-th-unless="${pageName == 'Statistics'}"><a data-th-text="#{topbar.statistics}" href="stats" data-toggle="collapse" data-target=".nav-collapse">Statistics</a></li>
+					<li data-th-unless="${pageName == 'Statistics'}"><a data-th-text="#{topbar.statistics}" href="/auth/stats" data-toggle="collapse" data-target=".nav-collapse">Statistics</a></li>
 					<li data-th-if="${pageName == 'Contact'}" class="active" data-toggle="collapse" data-target=".nav-collapse"><a data-th-text="#{topbar.contact}" href="">Contact</a></li>
-					<li data-th-unless="${pageName == 'Contact'}"><a data-th-text="#{topbar.contact}" href="contact" data-toggle="collapse" data-target=".nav-collapse">Contact</a></li>
+					<li data-th-unless="${pageName == 'Contact'}"><a data-th-text="#{topbar.contact}" href="/auth/contact" data-toggle="collapse" data-target=".nav-collapse">Contact</a></li>
 				</ul>
 				<ul class="nav hidden-desktop" data-sec-authorize="hasRole('ROLE_USER')" data-th-include="fragments/actionmenu::actionmenu"></ul>
 				<ul class="nav pull-right visible-desktop">
 					<li class="dropdown" data-sec-authorize="hasRole('ROLE_USER')">
 						<a id="userButton" class="dropdown-toggle" data-toggle="dropdown" href=""><i class="icon-user icon-white"></i> <th-block data-th-text="${ userInfo.preferredUsername } ?: ${ userInfo.sub }">shortName</th-block> <span class="caret"></span></a>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="manage/#user/profile" data-toggle="collapse" data-target=".nav-collapse" data-th-text="${ userInfo.name ?: userInfo.givenName + ' ' + userInfo.familyName}">longName</a></li>
+							<li><a href="/auth/manage/#user/profile" data-toggle="collapse" data-target=".nav-collapse" data-th-text="${ userInfo.name ?: userInfo.givenName + ' ' + userInfo.familyName}">longName</a></li>
 							<li class="divider"></li>
-							<li><a href="logout" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-remove"></i> Log out</a></li>
+							<li><a href="/auth/logout" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-remove"></i> Log out</a></li>
 						</ul>
 					</li>
                     <li sec:authorize="isAnonymous()">
-                    	<a data-th-text="#{topbar.login}" id="loginButton" href="login" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-lock icon-white"></i>login</a>
+                    	<a data-th-text="#{topbar.login}" id="loginButton" href="/auth/login" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-lock icon-white"></i>login</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->

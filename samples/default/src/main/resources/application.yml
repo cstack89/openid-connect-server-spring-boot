@@ -7,11 +7,19 @@ logging:
   level:
     ROOT: INFO
     org.springframework.security: INFO
-
+server:
+  port: 8081
+  use-forward-headers: true
+  context-path : /auth
+  servlet:
+    context-path: /auth
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
 openid:
   connect:
     server:
-      issuer: http://localhost:8080/
+      issuer: https://smarthome.fledglingmaker.com/auth/
       topbarTitle: OpenID Connect Server
       logoImageUrl: resources/images/openid_connect_small.png
     crypto:
@@ -24,3 +32,9 @@ openid:
         defaultAlgorithm: RSA1_5
         defaultDecryptionKeyId: rsa1
         defaultEncryptionKeyId: rsa1
+    endpoints:
+      api:
+        whitelist.enabled: false
+        approvedsite.enabled: false
+      oidc:
+        dynamicclientregistration.enabled: false

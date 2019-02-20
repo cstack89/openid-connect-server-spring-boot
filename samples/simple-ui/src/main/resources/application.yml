@@ -6,12 +6,20 @@ spring:
 logging:
   level:
     ROOT: INFO
-    org.springframework.security: INFO
-
+    org.springframework.security: DEBUG
+server:
+  port: 8081
+  use-forward-headers: true
+  context-path : /auth
+  servlet:
+    context-path: /auth
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
 openid:
   connect:
     server:
-      issuer: http://localhost:8080/
+      issuer: https://smarthome.fledglingmaker.com/auth
       topbarTitle: OpenID Connect Server
     crypto:
       keystore:

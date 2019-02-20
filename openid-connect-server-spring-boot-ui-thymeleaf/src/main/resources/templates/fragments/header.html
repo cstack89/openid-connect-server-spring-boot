@@ -11,13 +11,13 @@
     <meta name="author" content=""/>
 
     <!-- stylesheets -->
-    <link href="resources/bootstrap2/css/bootstrap.css" rel="stylesheet"/>
-    <link href="resources/css/bootstrap-sheet.css" rel="stylesheet"/>
-    <link href="resources/css/mitreid-connect.css" rel="stylesheet"/>
-    <link href="resources/css/mitreid-connect-local.css" rel="stylesheet"/>
-    <link href="resources/bootstrap2/css/bootstrap-responsive.css" rel="stylesheet"/>
-    <link href="resources/css/mitreid-connect-responsive.css" rel="stylesheet"/>
-    <link href="resources/css/mitreid-connect-responsive-local.css" rel="stylesheet"/>
+    <link href="/auth/resources/bootstrap2/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/auth/resources/css/bootstrap-sheet.css" rel="stylesheet"/>
+    <link href="/auth/resources/css/mitreid-connect.css" rel="stylesheet"/>
+    <link href="/auth/resources/css/mitreid-connect-local.css" rel="stylesheet"/>
+    <link href="/auth/resources/bootstrap2/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <link href="/auth/resources/css/mitreid-connect-responsive.css" rel="stylesheet"/>
+    <link href="/auth/resources/css/mitreid-connect-responsive-local.css" rel="stylesheet"/>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -25,18 +25,18 @@
     <![endif]-->
 
     <!-- favico -->
-    <link rel="shortcut icon" href="resources/images/mitreid-connect.ico"/>
+    <link rel="shortcut icon" href="/auth/resources/images/mitreid-connect.ico"/>
 
     <!-- Load jQuery up here so that we can use in-page functions -->
-    <script type="text/javascript" src="resources/js/lib/jquery.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="resources/js/lib/moment-with-locales.js"></script>
-    <script type="text/javascript" src="resources/js/lib/i18next.js"></script>
+    <script type="text/javascript" src="/auth/resources/js/lib/jquery.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="/auth/resources/js/lib/moment-with-locales.js"></script>
+    <script type="text/javascript" src="/auth/resources/js/lib/i18next.js"></script>
     <script type="text/javascript" data-th-inline="javascript">
     /* <![CDATA[ */
     	$.i18n.init({
             fallbackLng: "en",
             lng: [[${config.locale.language}]],
-            resGetPath: "resources/js/locale/__lng__/__ns__.json",
+            resGetPath: "/auth/resources/js/locale/__lng__/__ns__.json",
             ns: {
             	namespaces: [[${config.languageNamespaces}]],
             	defaultNs: [[${config.defaultLanguageNamespace}]]

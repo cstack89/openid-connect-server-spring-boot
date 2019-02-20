@@ -16,8 +16,9 @@ INSERT INTO client_scope (owner_id, scope) VALUES
 	(@a, 'offline_access');
 
 INSERT INTO client_redirect_uri (owner_id, redirect_uri) VALUES
-	(@a, 'http://localhost/'),
-	(@a, 'http://localhost:8080/');
+	(@a, 'https://smarthome.fledglingmaker.com/pictureframe/'),
+	(@a, 'https://smarthome.fledglingmaker.com/*'),
+	(@a, 'https://smarthome.fledglingmaker.com/');
 	
 INSERT INTO client_grant_type (owner_id, grant_type) VALUES
 	(@a, 'authorization_code'),
